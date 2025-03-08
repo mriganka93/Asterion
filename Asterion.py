@@ -147,7 +147,7 @@ select_image_button.pack(pady=5)
 pdf_file_label = tk.Label(root, text="No File selected", relief="solid", width=40, height=2)
 pdf_file_label.pack(pady=10)
 
-select_pdf_button = tk.Button(root, text="Select  File", command=update_pdf_file_label)
+select_pdf_button = tk.Button(root, text="Select PDF File", command=update_pdf_file_label)
 select_pdf_button.pack(pady=5)
 
 encrypt_button = tk.Button(root, text="Encrypt and Embed", command=encrypt_and_embed)
