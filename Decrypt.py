@@ -14,10 +14,10 @@ def extract_metadata_from_image(image_path):
     img = Image.open(image_path)
     metadata = img.text  # Extract metadata from the image
 
-    iv = bytes.fromhex(metadata.get("IV", ""))  # Extract IV (Initialization Vector)
-    salt = bytes.fromhex(metadata.get("Salt", ""))  # Extract Salt
-    iterations = int(metadata.get("Iterations", "100000"))  # Extract Iterations
-    data_size = int(metadata.get("EncryptedDataSize",""))
+    iv = bytes.fromhex(metadata.get("Meta1", ""))  # Extract IV (Initialization Vector)
+    salt = bytes.fromhex(metadata.get("Meta2", ""))  # Extract Salt
+    iterations = int(metadata.get("Meta3", "100000"))  # Extract Iterations
+    data_size = int(metadata.get("SizePix",""))
 
     return iv, salt, iterations, data_size
 
