@@ -101,10 +101,10 @@ def encrypt_and_embed():
 
         # Create metadata with IV, Salt, Iterations, and Encrypted Data Size
         img_info = PngImagePlugin.PngInfo()
-        img_info.add_text("IV", iv.hex())
-        img_info.add_text("Salt", salt.hex())
-        img_info.add_text("Iterations", str(iterations))
-        img_info.add_text("EncryptedDataSize", str(len(encrypted_pdf_data)))  # Add the size of the encrypted data
+        img_info.add_text("Meta1", iv.hex())
+        img_info.add_text("Meta2", salt.hex())
+        img_info.add_text("Meta3", str(iterations))
+        img_info.add_text("Size", str(len(encrypted_pdf_data)))  # Add the size of the encrypted data
 
         # Embed the encrypted PDF data into the image
         output_image_path = "output_image_with_pdf.png"
